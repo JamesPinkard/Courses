@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2013 for Windows Desktop
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abstraction", "Abstraction\Abstraction.csproj", "{43BE4087-976A-4060-BA30-E2A114933ACA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abstraction_Tests", "Abstraction_Tests\Abstraction_Tests.csproj", "{B5D175DB-4FB8-43D7-A072-B327C44870FD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{43BE4087-976A-4060-BA30-E2A114933ACA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43BE4087-976A-4060-BA30-E2A114933ACA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43BE4087-976A-4060-BA30-E2A114933ACA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43BE4087-976A-4060-BA30-E2A114933ACA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5D175DB-4FB8-43D7-A072-B327C44870FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5D175DB-4FB8-43D7-A072-B327C44870FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5D175DB-4FB8-43D7-A072-B327C44870FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5D175DB-4FB8-43D7-A072-B327C44870FD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
