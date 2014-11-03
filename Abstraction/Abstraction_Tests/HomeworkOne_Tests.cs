@@ -30,5 +30,15 @@ namespace Abstraction_Tests
 
             Assert.That(result, Is.False);
         }
+
+        [Test]
+        public void PerfectNumbers_TwentyEightIsPerfect()
+        {
+            int testInt = 28;
+
+            bool result = Program.IsPerfect(testInt);
+
+            Assert.That(result, Is.True);
+        }
     }
 }

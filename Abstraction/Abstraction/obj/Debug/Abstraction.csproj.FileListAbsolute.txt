@@ -3,3 +3,9 @@ C:\Users\jpink_000\Documents\GitHub\Courses\Abstraction\Abstraction\bin\Debug\Ab
 C:\Users\jpink_000\Documents\GitHub\Courses\Abstraction\Abstraction\bin\Debug\Abstraction.pdb
 C:\Users\jpink_000\Documents\GitHub\Courses\Abstraction\Abstraction\obj\Debug\Abstraction.exe
 C:\Users\jpink_000\Documents\GitHub\Courses\Abstraction\Abstraction\obj\Debug\Abstraction.pdb
+C:\Users\James\Documents\GitHub\Courses\Abstraction\Abstraction\bin\Debug\Abstraction.exe.config
+C:\Users\James\Documents\GitHub\Courses\Abstraction\Abstraction\obj\Debug\Abstraction.exe
+C:\Users\James\Documents\GitHub\Courses\Abstraction\Abstraction\obj\Debug\Abstraction.pdb
+C:\Users\James\Documents\GitHub\Courses\Abstraction\Abstraction\bin\Debug\Abstraction.exe
+C:\Users\James\Documents\GitHub\Courses\Abstraction\Abstraction\bin\Debug\Abstraction.pdb
+C:\Users\James\Documents\GitHub\Courses\Abstraction\Abstraction\obj\Debug\Abstraction.csprojResolveAssemblyReference.cache
