@@ -21,7 +21,11 @@ namespace hw_part3
     public partial class MainWindow : Window
     {
         enum SelectedShape { Circle, Rectangle, Line }
-        SelectedShape currentShape;
+        int pointCount;        
+        SelectedShape currentShape;        
+        Random selectedVertex = new Random();
+        List<Point> points = new List<Point>();
+        
 
         public MainWindow()
         {
@@ -51,7 +55,8 @@ namespace hw_part3
             switch (currentShape)
             {
                 case SelectedShape.Circle:
-                    shapeToRender = new Ellipse() { Fill = Brushes.Green, Height = 35, Width = 35 };
+                    shapeToRender = new Ellipse() { Fill = Brushes.Green, Height = 15, Width = 15 };
+                    pointCount++;
                     break;
                 case SelectedShape.Rectangle:
                     shapeToRender = new Rectangle() { Fill = Brushes.Red, Height = 35, Width = 35, RadiusX = 10, RadiusY = 10 };
@@ -66,12 +71,59 @@ namespace hw_part3
             // Set top/left position to draw in the canvas.
             Canvas.SetLeft(shapeToRender, e.GetPosition(canvasDrawingArea).X);
             Canvas.SetTop(shapeToRender, e.GetPosition(canvasDrawingArea).Y);
-
+                        
             // Draw shape!
             canvasDrawingArea.Children.Add(shapeToRender);
+
+            points.Add(e.GetPosition(canvasDrawingArea));
+            bool threePointsExist = checkPointCount();
+            renderTriangleIf(threePointsExist);
+        }
+
+        private void renderTriangleIf(bool threePointsExist)
+        {
+            if (threePointsExist)
+            {
+                int pointIndex = selectedVertex.Next(3);
+                Point myPoint = points[pointIndex];
+
+                while (pointCount <= 1000)
+                {   
+                    int nextPointIndex = selectedVertex.Next(3);
+                    Point nextPoint = points[nextPointIndex];
+
+                    Shape circle = new Ellipse() { Fill = Brushes.Green, Height = 15, Width = 15 };
+                    double midpointX = Math.Abs((myPoint.X + nextPoint.X) / 2);
+                    double midpointY = Math.Abs((myPoint.Y + nextPoint.Y) / 2);
+
+                    Canvas.SetLeft(circle, midpointX);
+                    Canvas.SetTop(circle, midpointY);
+
+                    canvasDrawingArea.Children.Add(circle);
+                    myPoint = new Point(midpointX, midpointY);
+                    pointCount++;
+                }
+            }
+        }
+
+        private bool checkPointCount()
+        {
+            if (pointCount==3)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         private void canvasDrawingArea_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
+        {            
+            removeShape(sender, e);
+        }
+
+        private void removeShape(object sender, MouseButtonEventArgs e)
         {
             // First, get the X,Y location of where the user clicked.
             Point pt = e.GetPosition((Canvas)sender);
