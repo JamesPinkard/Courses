@@ -41,4 +41,30 @@ namespace Abstraction_Tests
             Assert.That(result, Is.True);
         }
     }
+
+    [TestFixture]
+    public class Problem4_Soundex_Tests
+    {
+        [Test]
+        public void Soundex_GetCode_KeepFirstLetterOfSurname()
+        {
+            string testName = "Vaska";
+            Soundex mySound = new Soundex();
+
+            string result = mySound.GetCode(testName);
+
+            Assert.That(result[0], Is.EqualTo(testName[0]));
+        }
+
+        [Test]
+        public void Soundex_GetCode_ConvertTheseLettersToZeroCode()
+        {
+            string testName = "AEIOUHWY";
+            Soundex mySound = new Soundex();
+
+            string result = mySound.GetCode(testName);
+
+            Assert.That(result, Is.EqualTo("A000")); 
+        }
+    }
 }

@@ -11,3 +11,6 @@ C:\Users\jpink_000\Documents\GitHub\Courses\Abstraction\hw_part3\obj\Debug\hw_pa
 C:\Users\jpink_000\Documents\GitHub\Courses\Abstraction\hw_part3\obj\Debug\hw_part3.csproj.GenerateResource.Cache
 C:\Users\jpink_000\Documents\GitHub\Courses\Abstraction\hw_part3\obj\Debug\hw_part3.exe
 C:\Users\jpink_000\Documents\GitHub\Courses\Abstraction\hw_part3\obj\Debug\hw_part3.pdb
+C:\Users\James\Documents\GitHub\Courses\Abstraction\hw_part3\bin\Debug\hw_part3.exe.config
+C:\Users\James\Documents\GitHub\Courses\Abstraction\hw_part3\obj\Debug\hw_part3.exe
+C:\Users\James\Documents\GitHub\Courses\Abstraction\hw_part3\obj\Debug\hw_part3.pdb
