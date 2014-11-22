@@ -10,14 +10,21 @@ namespace Abstraction
     {      
         static void Main(string[] args)
         {
-            RunVotingErrorSimulation();
-
-            
+            RunSoundexLookup();
+                        
             Console.ReadKey();
         }
 
-        static Random randomGen = new Random();
+        private static void RunSoundexLookup()
+        {
+            Soundex soundy = new Soundex();
 
+            Console.Write("Enter Surname: ");
+            string surname = Console.ReadLine();
+
+            string result = soundy.GetCode(surname);
+            Console.WriteLine("Soundex code for {0} is {1}", surname, result);
+        }
 
         private static void RunVotingErrorSimulation()
         {
@@ -83,6 +90,8 @@ namespace Abstraction
             Console.WriteLine("There were {0} invalid trials", invalidTrials);
             Console.WriteLine("Chance of an invalid election result after 500 trials = {0}%", invalidChance * 100);
         }
+        
+        static Random randomGen = new Random();
 
         static int getLeadingVotes(int totalVotes, double percentSpread)
         {

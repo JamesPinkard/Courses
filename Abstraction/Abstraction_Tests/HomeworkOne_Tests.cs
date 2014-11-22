@@ -66,5 +66,27 @@ namespace Abstraction_Tests
 
             Assert.That(result, Is.EqualTo("A000")); 
         }
+
+        [Test]
+        public void Soundex_GetCode_ZelinskiReturnsZ542()
+        {
+            string testName = "Zelinski";
+            Soundex mySound = new Soundex();
+
+            string result = mySound.GetCode(testName);
+
+            Assert.That(result, Is.EqualTo("Z542"));
+        }
+
+        [Test]
+        public void Soundex_GetCode_DupSoundsAreRemoved()
+        {
+            string testName = "Focakemon";
+            Soundex mySound = new Soundex();
+
+            string result = mySound.GetCode(testName);
+
+            Assert.That(result, Is.EqualTo("F240"));
+        }
     }
 }

@@ -1,16 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="C:\Users\James\Documents\GitHub\Courses\Abstraction\Abstraction_Tests\bin\Debug\Abstraction_Tests.dll" total="2" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2014-11-17" time="19:28:27">
+<test-results name="C:\Users\James\Documents\GitHub\Courses\Abstraction\Abstraction_Tests\bin\Debug\Abstraction_Tests.dll" total="7" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2014-11-19" time="18:23:06">
   <environment nunit-version="2.6.3.13283" clr-version="2.0.50727.8009" os-version="Microsoft Windows NT 6.2.9200.0" platform="Win32NT" cwd="C:\Users\James\Documents\GitHub\Support_Packages\NUnit.Runners.2.6.3\tools" machine-name="BIG_BERTHA" user="James" user-domain="BIG_BERTHA" />
   <culture-info current-culture="en-US" current-uiculture="en-US" />
-  <test-suite type="Assembly" name="C:\Users\James\Documents\GitHub\Courses\Abstraction\Abstraction_Tests\bin\Debug\Abstraction_Tests.dll" executed="True" result="Success" success="True" time="0.088" asserts="0">
+  <test-suite type="Assembly" name="C:\Users\James\Documents\GitHub\Courses\Abstraction\Abstraction_Tests\bin\Debug\Abstraction_Tests.dll" executed="True" result="Success" success="True" time="0.041" asserts="0">
     <results>
-      <test-suite type="Namespace" name="Abstraction_Tests" executed="True" result="Success" success="True" time="0.070" asserts="0">
+      <test-suite type="Namespace" name="Abstraction_Tests" executed="True" result="Success" success="True" time="0.040" asserts="0">
         <results>
-          <test-suite type="TestFixture" name="Problem4_Soundex_Tests" executed="True" result="Success" success="True" time="0.068" asserts="0">
+          <test-suite type="TestFixture" name="HomeworkOne_Tests" executed="True" result="Success" success="True" time="0.014" asserts="0">
             <results>
-              <test-case name="Abstraction_Tests.Problem4_Soundex_Tests.Soundex_GetCode_ConvertTheseLettersToZeroCode" executed="True" result="Success" success="True" time="0.051" asserts="1" />
-              <test-case name="Abstraction_Tests.Problem4_Soundex_Tests.Soundex_GetCode_KeepFirstLetterOfSurname" executed="True" result="Success" success="True" time="0.003" asserts="1" />
+              <test-case name="Abstraction_Tests.HomeworkOne_Tests.PerfectNumbers_SixIsPerfect" executed="True" result="Success" success="True" time="0.005" asserts="1" />
+              <test-case name="Abstraction_Tests.HomeworkOne_Tests.PerfectNumbers_ThreeIsNotPerfect" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+              <test-case name="Abstraction_Tests.HomeworkOne_Tests.PerfectNumbers_TwentyEightIsPerfect" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="Problem4_Soundex_Tests" executed="True" result="Success" success="True" time="0.020" asserts="0">
+            <results>
+              <test-case name="Abstraction_Tests.Problem4_Soundex_Tests.Soundex_GetCode_ConvertTheseLettersToZeroCode" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+              <test-case name="Abstraction_Tests.Problem4_Soundex_Tests.Soundex_GetCode_DupSoundsAreRemoved" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+              <test-case name="Abstraction_Tests.Problem4_Soundex_Tests.Soundex_GetCode_KeepFirstLetterOfSurname" executed="True" result="Success" success="True" time="0.006" asserts="1" />
+              <test-case name="Abstraction_Tests.Problem4_Soundex_Tests.Soundex_GetCode_ZelinskiReturnsZ542" executed="True" result="Success" success="True" time="0.001" asserts="1" />
             </results>
           </test-suite>
         </results>
