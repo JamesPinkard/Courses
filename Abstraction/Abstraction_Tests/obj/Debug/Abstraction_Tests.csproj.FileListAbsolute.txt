@@ -21,3 +21,5 @@ C:\Users\James\Documents\GitHub\Courses\Abstraction\Abstraction_Tests\bin\Debug\
 C:\Users\James\Documents\GitHub\Courses\Abstraction\Abstraction_Tests\obj\Debug\Abstraction_Tests.csprojResolveAssemblyReference.cache
 C:\Users\James\Documents\GitHub\Courses\Abstraction\Abstraction_Tests\obj\Debug\Abstraction_Tests.dll
 C:\Users\James\Documents\GitHub\Courses\Abstraction\Abstraction_Tests\obj\Debug\Abstraction_Tests.pdb
+C:\Users\James\Documents\GitHub\Courses\Abstraction\Abstraction_Tests\obj\Debug\Abstraction_Tests.Properties.Resources.resources
+C:\Users\James\Documents\GitHub\Courses\Abstraction\Abstraction_Tests\obj\Debug\Abstraction_Tests.csproj.GenerateResource.Cache

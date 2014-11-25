@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Reflection;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -87,6 +89,68 @@ namespace Abstraction_Tests
             string result = mySound.GetCode(testName);
 
             Assert.That(result, Is.EqualTo("F240"));
+        }
+    }
+
+    [TestFixture]
+    public class Problem5_ClassGrades_Tests
+    {
+        // Assemby is System.Reflection Namespace
+        
+        Assembly assembly = Assembly.GetExecutingAssembly();
+        string resourceName = "Abstraction_Tests.Resources.grades.txt";
+        string result;
+        
+        private ClassGrades SetupClassGrades()
+        {
+            ClassGrades grades = new ClassGrades();
+            using (Stream stream = assembly.GetManifestResourceStream(resourceName))
+            using (StreamReader reader = new StreamReader(stream))
+            {
+                result = reader.ReadToEnd();
+            }
+            grades.LoadGrades(result);
+            return grades;
+        }
+
+        [Test]
+        public void ResourceFile_Exists()
+        {            
+            Console.WriteLine("The assembly name is {0}", assembly.FullName);
+            string[] names = assembly.GetManifestResourceNames();
+            foreach (var n in names)
+            {
+                Console.WriteLine("Resource Name is {0}",n);
+            }
+                        
+            using (Stream stream = assembly.GetManifestResourceStream(resourceName))            
+            using (StreamReader reader = new StreamReader(stream))
+            {
+                result = reader.ReadToEnd();
+            }
+
+            Console.WriteLine(result);
+            Assert.That(result, Is.Not.Null);
+        }
+
+        [Test]
+        public void LoadGrades_GradesReturnsArrayOfGrades()
+        {
+            ClassGrades grades = SetupClassGrades();
+
+            grades.LoadGrades(result);
+
+            Assert.That(grades.Grades.Length, Is.EqualTo(12));
+        }
+        
+        [Test]
+        public void GetGradeBinCount_ReturnsCountOfTensPlaceInGrades()
+        {
+            ClassGrades grades = SetupClassGrades();       
+
+            int count = grades.GetBinCount(7);
+
+            Assert.That(count, Is.EqualTo(3));
         }
     }
 }

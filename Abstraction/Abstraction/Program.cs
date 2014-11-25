@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Reflection;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,9 +12,38 @@ namespace Abstraction
     {      
         static void Main(string[] args)
         {
-            RunSoundexLookup();
+            RunGradeHistogram();
                         
             Console.ReadKey();
+        }
+
+        private static void RunGradeHistogram()
+        {
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            string resourceName = "Abstraction.Resources.grades.txt";
+            string result;
+            ClassGrades grades = new ClassGrades();
+
+            using (Stream stream = assembly.GetManifestResourceStream(resourceName))
+            using (StreamReader reader = new StreamReader(stream))
+            {
+                result = reader.ReadToEnd();
+            }
+
+            grades.LoadGrades(result);
+
+            for (int i = 0; i < 10; i++)
+            {
+                int bin = grades.GetBinCount(i);
+
+                string xString = "";
+                for (int b = 0; b < bin; b++)
+                {
+                    xString += "X";
+                }
+
+                Console.WriteLine("{0}0 - {0}9: {1}", i, xString);
+            }
         }
 
         private static void RunSoundexLookup()
@@ -26,6 +57,8 @@ namespace Abstraction
             Console.WriteLine("Soundex code for {0} is {1}", surname, result);
         }
 
+        static Random randomGen = new Random();
+        
         private static void RunVotingErrorSimulation()
         {
             Console.Write("Enter number of voters: ");
@@ -90,8 +123,6 @@ namespace Abstraction
             Console.WriteLine("There were {0} invalid trials", invalidTrials);
             Console.WriteLine("Chance of an invalid election result after 500 trials = {0}%", invalidChance * 100);
         }
-        
-        static Random randomGen = new Random();
 
         static int getLeadingVotes(int totalVotes, double percentSpread)
         {

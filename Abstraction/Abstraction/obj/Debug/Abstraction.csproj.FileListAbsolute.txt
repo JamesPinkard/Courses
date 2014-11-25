@@ -9,3 +9,5 @@ C:\Users\James\Documents\GitHub\Courses\Abstraction\Abstraction\obj\Debug\Abstra
 C:\Users\James\Documents\GitHub\Courses\Abstraction\Abstraction\bin\Debug\Abstraction.exe
 C:\Users\James\Documents\GitHub\Courses\Abstraction\Abstraction\bin\Debug\Abstraction.pdb
 C:\Users\James\Documents\GitHub\Courses\Abstraction\Abstraction\obj\Debug\Abstraction.csprojResolveAssemblyReference.cache
+C:\Users\James\Documents\GitHub\Courses\Abstraction\Abstraction\obj\Debug\Abstraction.Properties.Resources.resources
+C:\Users\James\Documents\GitHub\Courses\Abstraction\Abstraction\obj\Debug\Abstraction.csproj.GenerateResource.Cache
