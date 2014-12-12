@@ -10,6 +10,8 @@ namespace Lecture_Recursion
     {
         static void Main(string[] args)
         {
+            ListSubsets("abcdefg");
+            Console.ReadKey();
         }
 
         static int Raise(int baseNum, int exp)
@@ -78,9 +80,25 @@ namespace Lecture_Recursion
         }
 
         // wrapper function
-        void ListPermutations(string s)
+        static void ListPermutations(string s)
         {
             RecPermute("", s);
+        }
+
+        static void RecSubsets(string soFar, string rest)
+        {
+            if (rest == "")
+                Console.WriteLine(soFar);
+            else
+            {
+                RecSubsets(soFar + rest[0], rest.Substring(1));
+                RecSubsets(soFar, rest.Substring(1));
+            }
+        }
+
+        static void ListSubsets(string str)
+        {
+            RecSubsets("", str);
         }
     }
 }

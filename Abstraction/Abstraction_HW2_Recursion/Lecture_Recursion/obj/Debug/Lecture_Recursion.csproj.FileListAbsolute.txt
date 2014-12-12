@@ -1,0 +1,6 @@
+C:\Users\jpink_000\Documents\GitHub\Courses\Abstraction\Abstraction_HW2_Recursion\Lecture_Recursion\bin\Debug\Lecture_Recursion.exe.config
+C:\Users\jpink_000\Documents\GitHub\Courses\Abstraction\Abstraction_HW2_Recursion\Lecture_Recursion\bin\Debug\Lecture_Recursion.exe
+C:\Users\jpink_000\Documents\GitHub\Courses\Abstraction\Abstraction_HW2_Recursion\Lecture_Recursion\bin\Debug\Lecture_Recursion.pdb
+C:\Users\jpink_000\Documents\GitHub\Courses\Abstraction\Abstraction_HW2_Recursion\Lecture_Recursion\obj\Debug\Lecture_Recursion.csprojResolveAssemblyReference.cache
+C:\Users\jpink_000\Documents\GitHub\Courses\Abstraction\Abstraction_HW2_Recursion\Lecture_Recursion\obj\Debug\Lecture_Recursion.exe
+C:\Users\jpink_000\Documents\GitHub\Courses\Abstraction\Abstraction_HW2_Recursion\Lecture_Recursion\obj\Debug\Lecture_Recursion.pdb

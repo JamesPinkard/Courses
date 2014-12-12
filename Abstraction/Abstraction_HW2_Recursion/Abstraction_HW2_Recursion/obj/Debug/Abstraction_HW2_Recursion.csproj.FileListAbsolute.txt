@@ -4,3 +4,9 @@ C:\Users\James\Documents\GitHub\Courses\Abstraction\Abstraction_HW2_Recursion\Ab
 C:\Users\James\Documents\GitHub\Courses\Abstraction\Abstraction_HW2_Recursion\Abstraction_HW2_Recursion\bin\Debug\Abstraction_HW2_Recursion.pdb
 C:\Users\James\Documents\GitHub\Courses\Abstraction\Abstraction_HW2_Recursion\Abstraction_HW2_Recursion\obj\Debug\Abstraction_HW2_Recursion.exe
 C:\Users\James\Documents\GitHub\Courses\Abstraction\Abstraction_HW2_Recursion\Abstraction_HW2_Recursion\obj\Debug\Abstraction_HW2_Recursion.pdb
+C:\Users\jpink_000\Documents\GitHub\Courses\Abstraction\Abstraction_HW2_Recursion\Abstraction_HW2_Recursion\bin\Debug\Abstraction_HW2_Recursion.exe.config
+C:\Users\jpink_000\Documents\GitHub\Courses\Abstraction\Abstraction_HW2_Recursion\Abstraction_HW2_Recursion\obj\Debug\Abstraction_HW2_Recursion.exe
+C:\Users\jpink_000\Documents\GitHub\Courses\Abstraction\Abstraction_HW2_Recursion\Abstraction_HW2_Recursion\obj\Debug\Abstraction_HW2_Recursion.pdb
+C:\Users\jpink_000\Documents\GitHub\Courses\Abstraction\Abstraction_HW2_Recursion\Abstraction_HW2_Recursion\bin\Debug\Abstraction_HW2_Recursion.exe
+C:\Users\jpink_000\Documents\GitHub\Courses\Abstraction\Abstraction_HW2_Recursion\Abstraction_HW2_Recursion\bin\Debug\Abstraction_HW2_Recursion.pdb
+C:\Users\jpink_000\Documents\GitHub\Courses\Abstraction\Abstraction_HW2_Recursion\Abstraction_HW2_Recursion\obj\Debug\Abstraction_HW2_Recursion.csprojResolveAssemblyReference.cache
