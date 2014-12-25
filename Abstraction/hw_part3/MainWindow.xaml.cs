@@ -62,7 +62,12 @@ namespace hw_part3
                     shapeToRender = new Rectangle() { Fill = Brushes.Red, Height = 35, Width = 35, RadiusX = 10, RadiusY = 10 };
                     break;
                 case SelectedShape.Line:
-                    shapeToRender = new Line() { Fill = Brushes.Blue, StrokeThickness = 10, X1 = 0, X2 = 50, Y1 = 0, Y2 = 50 };
+                    shapeToRender = new Line() 
+                    {
+                        Stroke = Brushes.Blue, StrokeThickness = 5, X1 = 0, X2 = 300, Y1 = 0, Y2 = 0,
+                        StrokeStartLineCap= PenLineCap.Triangle,
+                        StrokeEndLineCap= PenLineCap.Round
+                    };
                     break;
                 default:
                     return;
@@ -71,13 +76,51 @@ namespace hw_part3
             // Set top/left position to draw in the canvas.
             Canvas.SetLeft(shapeToRender, e.GetPosition(canvasDrawingArea).X);
             Canvas.SetTop(shapeToRender, e.GetPosition(canvasDrawingArea).Y);
+            
                         
             // Draw shape!
             canvasDrawingArea.Children.Add(shapeToRender);
 
+            Type shapeType = shapeToRender.GetType();
+            if (shapeType == typeof(Line))
+            {
+                double x = e.GetPosition(canvasDrawingArea).X;
+                double y = e.GetPosition(canvasDrawingArea).Y;
+                double w = 300;
+                double h = 100;
+                DrawRuler(x, y, w, h);
+            }
+
             points.Add(e.GetPosition(canvasDrawingArea));
             bool threePointsExist = checkPointCount();
             renderTriangleIf(threePointsExist);
+        }
+
+        private void DrawRuler(double x, double y, double w, double h)
+        {
+            if (w < 10 || h <5)
+            {
+                return;
+            }
+            else
+            {
+                Line tickMark = new Line()
+                {
+                    Stroke = Brushes.Black, StrokeThickness = 5, X1 = 0, X2 = 0, Y1 = -h, Y2 =0,
+                    StrokeStartLineCap = PenLineCap.Triangle,
+                    StrokeEndLineCap = PenLineCap.Round,
+                };
+
+                // Set top/left position to draw in the canvas.
+                double midX = x +(w/2);
+                Canvas.SetLeft(tickMark, midX);
+                Canvas.SetTop(tickMark, y);
+                
+                // Draw shape!
+                canvasDrawingArea.Children.Add(tickMark);
+                DrawRuler(x, y, w / 2, h / 2);
+                DrawRuler(midX, y, w / 2, h / 2);
+            }            
         }
 
         private void renderTriangleIf(bool threePointsExist)
