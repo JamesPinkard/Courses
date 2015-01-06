@@ -70,9 +70,14 @@ namespace Lecture_Recursion
                 Console.WriteLine(soFar);
             else
             {
+                // run through all permutations,
+                // start by setting each letter as the first position.
                 for (int i = 0; i < rest.Length; i++)
                 {
+                    // assign next character
                     string next = soFar + rest[i];
+
+                    // set remaining to list without next character
                     string remaining = rest.Substring(0, i) + rest.Substring(i + 1);
                     RecPermute(next, remaining);
                 }

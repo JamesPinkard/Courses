@@ -10,8 +10,8 @@ namespace Abstraction_HW2_Recursion
     {
         static void Main(string[] args)
         {
-            List<int> testList = new List<int>() { 4, 2, 7, 4 };
-            Console.WriteLine(CountCriticalVotes(testList, 2));
+            List<int> testList = new List<int>() { 3,1,2,3,0};
+            Console.WriteLine(Solvable(0, testList));
             Console.ReadKey();
         }
 
@@ -106,38 +106,12 @@ namespace Abstraction_HW2_Recursion
 
         // HW Problem 3
 
-        /*
-        static bool RecMakeSum(List<int> soFar, List<int> nums, int targetSum)
-        {
-            if (nums.Count == 0)
-            {
-                Console.WriteLine(soFar);
-                return soFar.Sum() == targetSum;
-            }
-            else
-            {
-                List<int> nextNums = new List<int>();
-                nextNums = nums.GetRange(1, nums.Count - 1);
-
-                List<int> nextSoFar = new List<int>();
-                nextSoFar.AddRange(soFar);
-                nextSoFar.Add(nums[0]);
-
-                if (RecMakeSum(nextSoFar, nextNums, targetSum)) return true;
-                if (RecMakeSum(soFar, nextNums, targetSum)) return true;
-                else
-                {
-                    return false;
-                }
-            }
-        }
-        */
 
         static int CountCriticalVotes(List<int> blocks, int blockIndex)
         {
             int targetSum = (blocks.Sum()/2) +1;
             int targetBlock = blocks[blockIndex];
-            blocks.Remove(blockIndex);
+            blocks.RemoveAt(blockIndex);
             List<int> Avotes = new List<int>();
 
             return recCriticalVotes(Avotes, blocks, targetBlock, targetSum);
@@ -158,14 +132,69 @@ namespace Abstraction_HW2_Recursion
             }
             else
             {
-                List<int> nextNums = new List<int>();
-                nextNums = blocks.GetRange(1, blocks.Count - 1);
-
                 List<int> nextSoFar = new List<int>();
                 nextSoFar.AddRange(Avotes);
                 nextSoFar.Add(blocks[0]);
 
+                List<int> nextNums = new List<int>();
+                nextNums = blocks.GetRange(1, blocks.Count - 1);
+
+
                 return recCriticalVotes(nextSoFar, nextNums, targetBlock, targetSum) + recCriticalVotes(Avotes, nextNums, targetBlock, targetSum);
+            }
+        }
+
+        // HW Problem 5
+
+        private static bool Solvable(int start, List<int> squares)
+        {
+            List<int> sofar = new List<int>();
+            return recSolvable(start, squares, sofar);
+        }
+
+        private static bool recSolvable(int start, List<int> squares, List<int> sofar)
+        {
+            if (squares[start] == 0)
+            {
+                return true;
+            }
+            else
+            {
+                if (start + squares[start] < squares.Count)
+                {
+                    int moveRight = start + squares[start];
+                    sofar.Add(moveRight);
+                    if (recSolvable(moveRight, squares, sofar)) return true;
+                }
+
+                if (start - squares[start] >= 0)
+                {
+                    int moveLeft = start - squares[start];                    
+                    if( sofar.Contains(moveLeft)) return false;
+                    sofar.Add(moveLeft);
+                    if (recSolvable(moveLeft, squares, sofar)) return true;
+                }
+            }
+            return false;
+        }
+
+        // HW Problem 6
+
+        private static int CutStock(List<int> requests, int stockLength)
+        {
+            List<int> soFar = new List<int>();
+            return recCutStock(soFar, requests, stockLength);
+        }
+
+        private static int recCutStock(List<int> soFar, List<int> requests, int stockLength)
+        {
+            if (soFar.Sum() == stockLength)
+            {
+                return 1;
+            }
+            else
+            {
+
             }
         }
     }
