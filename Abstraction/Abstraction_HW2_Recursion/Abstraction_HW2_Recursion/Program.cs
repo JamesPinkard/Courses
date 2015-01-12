@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,8 +10,9 @@ namespace Abstraction_HW2_Recursion
     {
         static void Main(string[] args)
         {
-            List<int> testList = new List<int>() { 3,1,2,3,0};
-            Console.WriteLine(Solvable(0, testList));
+            List<int> testList = new List<int>() { 4,3,4,1,7,8};
+            int num = CutStock(testList, 10);
+            Console.WriteLine(num);
             Console.ReadKey();
         }
 
@@ -56,8 +57,7 @@ namespace Abstraction_HW2_Recursion
         static bool RecMakeSum(List<int> soFar, List<int> nums, int targetSum)
         {
             if (nums.Count == 0)
-            {
-                Console.WriteLine(soFar);
+            {                
                 return soFar.Sum() == targetSum;
             }
             else
@@ -182,20 +182,108 @@ namespace Abstraction_HW2_Recursion
 
         private static int CutStock(List<int> requests, int stockLength)
         {
-            List<int> soFar = new List<int>();
-            return recCutStock(soFar, requests, stockLength);
+            List<int> copyList = new List<int>();
+            copyList.AddRange(requests);
+            return recCutStock(copyList, stockLength);
         }
 
-        private static int recCutStock(List<int> soFar, List<int> requests, int stockLength)
+        private static int recCutStock(List<int> subList, int stockLength)
         {
-            if (soFar.Sum() == stockLength)
+            if (subList.Count == 0)
             {
-                return 1;
+                return 0;
             }
             else
             {
-
+                // remove subset
+                List<int> remaining = new List<int>();
+                List<int> runningList = new List<int>();
+                List<int> leftOver = new List<int>();
+                remaining = removeSubset(subList, runningList, leftOver, stockLength);
+                
+                // 1 + evaluate remaining
+                return 1 + recCutStock(remaining, stockLength);
             }
         }
+
+        private static List<int> removeSubset(List<int> subList, List<int> runningList, List<int> leftOver, int stockLength)
+        {
+            if (subList.Count == 0)
+            {
+                return leftOver;
+            }
+            else
+            {                
+                List<int> addedRunninglist = new List<int>();
+                addedRunninglist.AddRange(runningList);
+                addedRunninglist.Add(subList[0]);
+
+                if (CanMakeSum(subList,stockLength))
+                {
+                    List<int> soFar = new List<int>();
+                    var subset = MakeSum(soFar, subList, stockLength);
+                    foreach (var item in subset)
+                    {
+                        subList.Remove(item);
+                    }
+                    return subList;                                       
+                }
+
+                else
+                {
+
+                    if (addedRunninglist.Sum() < stockLength )
+                    {
+                        return removeSubset(subList.GetRange(1, subList.Count - 1), addedRunninglist, leftOver, stockLength);
+                    }                
+                    else
+                    {
+                        leftOver.Add(subList[0]);
+                        return removeSubset(subList.GetRange(1, subList.Count - 1), runningList, leftOver, stockLength);
+                    }                
+                }
+            }        
+        }
+
+        static List<int> MakeSum(List<int> soFar, List<int> nums, int targetSum)
+        {
+            if (nums.Count == 0)
+            {                
+                if (soFar.Sum() == targetSum)
+                {
+                    return soFar;
+                }
+                else
+                {
+                    return new List<int>();
+                }
+            }
+            else
+            {
+                List<int> nextNums = new List<int>();
+                nextNums = nums.GetRange(1, nums.Count - 1);
+
+                List<int> nextSoFar = new List<int>();
+                nextSoFar.AddRange(soFar);
+                nextSoFar.Add(nums[0]);
+
+                var origList = MakeSum(nextSoFar, nextNums, targetSum);
+                var remainingList = MakeSum(soFar, nextNums, targetSum);
+                if (origList.Sum() == targetSum)
+                {
+                    return origList;
+                }
+                if (remainingList.Sum()== targetSum)
+                {
+                    return remainingList;
+                }
+
+                else
+                {
+                    return new List<int>();
+                }
+            }
+        }
+
     }
 }
