@@ -1,0 +1,6 @@
+C:\Users\jpink_000\Documents\GitHub\Courses\Algorithms\Algorithms\CountInversions\bin\Debug\CountInversions.exe.config
+C:\Users\jpink_000\Documents\GitHub\Courses\Algorithms\Algorithms\CountInversions\bin\Debug\CountInversions.exe
+C:\Users\jpink_000\Documents\GitHub\Courses\Algorithms\Algorithms\CountInversions\bin\Debug\CountInversions.pdb
+C:\Users\jpink_000\Documents\GitHub\Courses\Algorithms\Algorithms\CountInversions\obj\Debug\CountInversions.csprojResolveAssemblyReference.cache
+C:\Users\jpink_000\Documents\GitHub\Courses\Algorithms\Algorithms\CountInversions\obj\Debug\CountInversions.exe
+C:\Users\jpink_000\Documents\GitHub\Courses\Algorithms\Algorithms\CountInversions\obj\Debug\CountInversions.pdb

@@ -1,0 +1,6 @@
+C:\Users\jpink_000\Documents\GitHub\Courses\Algorithms\Algorithms\MinimumCut\bin\Debug\MinimumCut.exe.config
+C:\Users\jpink_000\Documents\GitHub\Courses\Algorithms\Algorithms\MinimumCut\bin\Debug\MinimumCut.exe
+C:\Users\jpink_000\Documents\GitHub\Courses\Algorithms\Algorithms\MinimumCut\bin\Debug\MinimumCut.pdb
+C:\Users\jpink_000\Documents\GitHub\Courses\Algorithms\Algorithms\MinimumCut\obj\Debug\MinimumCut.exe
+C:\Users\jpink_000\Documents\GitHub\Courses\Algorithms\Algorithms\MinimumCut\obj\Debug\MinimumCut.pdb
+C:\Users\jpink_000\Documents\GitHub\Courses\Algorithms\Algorithms\MinimumCut\obj\Debug\MinimumCut.csprojResolveAssemblyReference.cache

@@ -1,0 +1,6 @@
+C:\Users\jpink_000\Documents\GitHub\Courses\Algorithms\Algorithms\StronglyConnectedComponents\bin\Debug\StronglyConnectedComponents.exe.config
+C:\Users\jpink_000\Documents\GitHub\Courses\Algorithms\Algorithms\StronglyConnectedComponents\bin\Debug\StronglyConnectedComponents.exe
+C:\Users\jpink_000\Documents\GitHub\Courses\Algorithms\Algorithms\StronglyConnectedComponents\bin\Debug\StronglyConnectedComponents.pdb
+C:\Users\jpink_000\Documents\GitHub\Courses\Algorithms\Algorithms\StronglyConnectedComponents\obj\Debug\StronglyConnectedComponents.csprojResolveAssemblyReference.cache
+C:\Users\jpink_000\Documents\GitHub\Courses\Algorithms\Algorithms\StronglyConnectedComponents\obj\Debug\StronglyConnectedComponents.exe
+C:\Users\jpink_000\Documents\GitHub\Courses\Algorithms\Algorithms\StronglyConnectedComponents\obj\Debug\StronglyConnectedComponents.pdb

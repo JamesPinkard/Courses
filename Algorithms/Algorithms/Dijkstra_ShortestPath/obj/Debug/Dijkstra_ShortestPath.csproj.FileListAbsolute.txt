@@ -1,0 +1,6 @@
+C:\Users\jpink_000\Documents\GitHub\Courses\Algorithms\Algorithms\Dijkstra_ShortestPath\bin\Debug\Dijkstra_ShortestPath.exe.config
+C:\Users\jpink_000\Documents\GitHub\Courses\Algorithms\Algorithms\Dijkstra_ShortestPath\bin\Debug\Dijkstra_ShortestPath.exe
+C:\Users\jpink_000\Documents\GitHub\Courses\Algorithms\Algorithms\Dijkstra_ShortestPath\bin\Debug\Dijkstra_ShortestPath.pdb
+C:\Users\jpink_000\Documents\GitHub\Courses\Algorithms\Algorithms\Dijkstra_ShortestPath\obj\Debug\Dijkstra_ShortestPath.csprojResolveAssemblyReference.cache
+C:\Users\jpink_000\Documents\GitHub\Courses\Algorithms\Algorithms\Dijkstra_ShortestPath\obj\Debug\Dijkstra_ShortestPath.exe
+C:\Users\jpink_000\Documents\GitHub\Courses\Algorithms\Algorithms\Dijkstra_ShortestPath\obj\Debug\Dijkstra_ShortestPath.pdb
