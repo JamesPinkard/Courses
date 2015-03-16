@@ -1,0 +1,6 @@
+C:\Users\James\Documents\GitHub\Courses\DiscreteOptomizatoin\KnapsackProblem\KnapsackProblem\bin\Debug\KnapsackProblem.exe.config
+C:\Users\James\Documents\GitHub\Courses\DiscreteOptomizatoin\KnapsackProblem\KnapsackProblem\obj\Debug\KnapsackProblem.csprojResolveAssemblyReference.cache
+C:\Users\James\Documents\GitHub\Courses\DiscreteOptomizatoin\KnapsackProblem\KnapsackProblem\bin\Debug\KnapsackProblem.exe
+C:\Users\James\Documents\GitHub\Courses\DiscreteOptomizatoin\KnapsackProblem\KnapsackProblem\bin\Debug\KnapsackProblem.pdb
+C:\Users\James\Documents\GitHub\Courses\DiscreteOptomizatoin\KnapsackProblem\KnapsackProblem\obj\Debug\KnapsackProblem.exe
+C:\Users\James\Documents\GitHub\Courses\DiscreteOptomizatoin\KnapsackProblem\KnapsackProblem\obj\Debug\KnapsackProblem.pdb
