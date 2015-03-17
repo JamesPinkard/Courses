@@ -43,47 +43,37 @@ namespace KnapsackProblem
             int items = int.Parse(firstLine[0]);
             int capacity = int.Parse(firstLine[1]);
 
-            int[] values = new int[items];
-            int[] weights = new int[items];
+            Item[] myItems = new Item[items];
+            Knapsack myKnapsack = new Knapsack(capacity);
 
             for (int i = 1; i < items + 1; i++)
             {
                 string line = lines[i];
                 string[] parts = line.TrimEnd().Split();
+                Item anItem = new Item();
 
-                values[i - 1] = int.Parse(parts[0]);
-                weights[i - 1] = int.Parse(parts[1]);
+                anItem.Value = int.Parse(parts[0]);
+                anItem.Weight = int.Parse(parts[1]);
+
+                myItems[i - 1] = anItem;
             }
 
             // a trivial greedy algorithm for filling the knapsack
-            // it takes itmes in order until the knapsack is full
-            int value = 0;
-            int weight = 0;
+            // it takes itmes in order until the knapsack is full 
             int[] taken = new int[items];
 
-            for (int i = 0; i < items; i++)
+            foreach(var item in myItems)
             {
-                if (weight + weights[i] <= capacity)
+                if (myKnapsack.Weight + item.Weight <= capacity)
                 {
-                    taken[i] = 1;
-                    value += values[i];
-                    weight += weights[i];
-                }
-                else
-                {
-                    taken[i] = 0;
+                    myKnapsack.Add(item);  
                 }
             }
 
             // prpare the solution in the specified output format
-            Console.WriteLine("{0} 0", value);
-            for (int i = 0; i < items; i++)
-            {
-                Console.Write("{0} ", taken[i]);
-            }
-            Console.WriteLine();
+            PrintOutput(myItems, myKnapsack);
         }
-
+        
         private static List<string> readLinesIn(string fileName)
         {
             List<string> lines = new List<string>();
@@ -111,6 +101,16 @@ namespace KnapsackProblem
                 }
             }
             return fileName;
+        }
+        
+        private static void PrintOutput(Item[] myItems, Knapsack myKnapsack)
+        {
+            Console.WriteLine("{0} 0", myKnapsack.Value);
+            foreach (var item in myItems)
+            {
+                Console.Write("{0} ", item.Taken);
+            }
+            Console.WriteLine();
         }
     }
 }

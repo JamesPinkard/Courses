@@ -16,20 +16,27 @@ namespace KnapsackProblem
             this.Capacity = capacity;
         }
 
+        public int Weight { get; private set; }
+        public int Value { get; private set; }
+
         public List<Item> GetItemListCopy()
         {
             return items.ToList();
         }
 
-        public void RemoveItem(Item item)
+        public void Remove(Item item)
         {
+            Weight -= item.Weight;
+            Value -= item.Value;
             items.Remove(item);
         }
 
-        public void AddItem(Item item)
+        public void Add(Item item)
         {
             item.Taken = 1;
             items.Add(item);
+            Weight += item.Weight;
+            Value += item.Value;
         }
 
 

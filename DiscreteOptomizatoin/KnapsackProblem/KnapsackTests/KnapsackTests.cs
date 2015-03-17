@@ -16,9 +16,9 @@ namespace KnapsackProblem.Tests
             Item myItem = new Item();            
             myItem.Value = 5;
             myItem.Weight = 3;
-            Knapsack myKnapsack = new Knapsack(10);
+            Knapsack myKnapsack = getKnapsack();
 
-            myKnapsack.AddItem(myItem);
+            myKnapsack.Add(myItem);
 
             List<Item> copyItems = myKnapsack.GetItemListCopy();
             Item kpItem = copyItems[0];
@@ -26,14 +26,15 @@ namespace KnapsackProblem.Tests
             Assert.That(kpItem.Weight, Is.EqualTo(myItem.Weight));
         }
 
+
         [Test]
         public void AddedItemHasTakenFlag()
         {
             Item myItem = new Item(5, 3);
             Assert.That(myItem.Taken, Is.EqualTo(0));
-            Knapsack myKnapsack = new Knapsack(10);
+            Knapsack myKnapsack = getKnapsack();
 
-            myKnapsack.AddItem(myItem);
+            myKnapsack.Add(myItem);
 
             List<Item> copyItems = myKnapsack.GetItemListCopy();
             Item kpItem = copyItems[0];
@@ -41,6 +42,22 @@ namespace KnapsackProblem.Tests
         }
 
         [Test]
-        public void 
+        public void KnapsackReflectsItemWeight()
+        {
+            Item myItem = new Item(5, 3);
+            Item newItem = new Item(2, 5);
+            Knapsack myKnapsack = getKnapsack();
+
+            myKnapsack.Add(myItem);
+            myKnapsack.Add(newItem);
+
+            Assert.That(myKnapsack.Weight, Is.EqualTo(myItem.Weight + newItem.Weight));            
+        }
+       
+        private static Knapsack getKnapsack()
+        {
+            Knapsack myKnapsack = new Knapsack(10);
+            return myKnapsack;
+        }
     }
 }
