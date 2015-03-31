@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using KnapsackProblem;
 using NUnit.Framework;
 
-namespace KnapsackProblem.Tests
+namespace KnapsackTests
 {
-    class KnapsackTests
+    partial class KnapsackTests
     {
         [Test]
         public void AddItemToKnapsack()
@@ -53,11 +53,7 @@ namespace KnapsackProblem.Tests
 
             Assert.That(myKnapsack.Weight, Is.EqualTo(myItem.Weight + newItem.Weight));            
         }
-       
-        private static Knapsack getKnapsack()
-        {
-            Knapsack myKnapsack = new Knapsack(10);
-            return myKnapsack;
-        }
+
+
     }
 }
