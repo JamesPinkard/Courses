@@ -8,12 +8,12 @@ using System.IO;
 
 namespace KnapsackProblem
 {
-    class Solver
+    public class Solver
     {
         static void Main(string[] args)
         {
            
-            int maxStackSize = 1028 *1024 *1024;
+            int maxStackSize = 128 *1024 *1024;
             object token = new object();
 
             try
@@ -36,7 +36,7 @@ namespace KnapsackProblem
         }
 
         // Read the instance, solve it, and print the solution in the standard output
-        public static void solve(string[] args)
+        public static void basicSolve(string[] args)
         {
             string fileName = null;
 
@@ -165,11 +165,11 @@ namespace KnapsackProblem
             {
                 string line = lines[i];
                 string[] parts = line.TrimEnd().Split();
-                Item anItem = new Item();
 
-                anItem.Value = int.Parse(parts[0]);
-                anItem.Weight = int.Parse(parts[1]);
+                int iValue = int.Parse(parts[0]);
+                int iWeight = int.Parse(parts[1]);
 
+                Item anItem = new Item(iValue, iWeight);
                 myItems[i - 1] = anItem;
             }
 
@@ -187,6 +187,52 @@ namespace KnapsackProblem
 
             // prpare the solution in the specified output format
             PrintOutput(myItems, myKnapsack);
+        }
+
+        // original solve algorithm
+        private static void solve(string[] args)
+        {
+            string fileName = null;
+
+            // Get the temp file name
+            fileName = getTempFileName(args, fileName);
+
+            if (fileName == null)
+            {
+                return;
+            }
+
+            // read the lines out of the file
+            List<string> lines = readLinesIn(fileName);
+
+            // parse the data in the file
+            string[] firstLine = lines.First().TrimEnd().Split();
+            int items = int.Parse(firstLine[0]);
+            int capacity = int.Parse(firstLine[1]);
+
+            Item[] myItems = new Item[items];
+            Knapsack myKnapsack = new Knapsack(capacity);
+
+            for (int i = 1; i < items + 1; i++)
+            {
+                string line = lines[i];
+                string[] parts = line.TrimEnd().Split();
+
+                int iValue = int.Parse(parts[0]);
+                int iWeight = int.Parse(parts[1]);
+
+                Item anItem = new Item(iValue, iWeight);
+                anItem.Index = i;
+                myItems[i - 1] = anItem;
+            }
+
+            Array.Sort(myItems);
+            Array.Reverse(myItems);
+
+            Knapsack optKnapsack = GetOptimumKnapsack(myKnapsack, myItems);
+
+            // prpare the solution in the specified output format
+            PrintOutput(myItems, optKnapsack);
         }
         
         private static List<string> readLinesIn(string fileName)
@@ -221,11 +267,70 @@ namespace KnapsackProblem
         private static void PrintOutput(Item[] myItems, Knapsack myKnapsack)
         {
             Console.WriteLine("{0} 0", myKnapsack.Value);
+            List<Item> takenItems = myKnapsack.GetItemListCopy();
+
+            int[] takenValues = new int[takenItems.Count];
+            int i = 0;
+            foreach (var t in takenItems)
+            {
+                takenValues[i] = t.Index;
+                i++;
+            }
+
             foreach (var item in myItems)
             {
-                Console.Write("{0} ", item.Taken);
+                if (takenValues.Contains(item.Index))
+                {
+                    Console.Write("{0} ", 1);
+                }
+                else
+                {
+                    Console.Write("{0} ", 0);
+                }
             }
             Console.WriteLine();
+        }
+
+        public static Knapsack GetOptimumKnapsack(Knapsack knapsack, Item[] itemArray)
+        {
+            Knapsack myKnapsack = knapsack.Copy();
+            int kValue = myKnapsack.Value;            
+            
+            if (myKnapsack.Weight > myKnapsack.Capacity)
+            {
+                myKnapsack.RemoveLastItem();
+                return myKnapsack;
+            }
+
+            if (itemArray.Length < 1)
+            {
+                if (kValue > myKnapsack.FoundMax)
+                {
+                    myKnapsack.FoundMax = kValue;
+                    return myKnapsack;
+                }
+                else
+                {
+                    return myKnapsack;   
+                }
+            }
+
+            int availableMax = myKnapsack.GetAvailableMax(itemArray);
+            if (availableMax > myKnapsack.FoundMax)
+            {
+                myKnapsack.Add(itemArray[0]);
+                Item[] restOfItems = itemArray.Skip(1).ToArray();
+                Knapsack kAdded = GetOptimumKnapsack(myKnapsack, restOfItems);
+
+                
+                Knapsack kOriginal = GetOptimumKnapsack(knapsack, restOfItems);
+
+                return Knapsack.GetMaxKnapsack(kAdded, kOriginal);
+            }
+            else
+            {
+                return myKnapsack;
+            }
         }
     }
 }

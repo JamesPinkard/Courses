@@ -6,21 +6,38 @@ using System.Threading.Tasks;
 
 namespace KnapsackProblem
 {
-    public class Item
+    public struct Item : IComparable<Item>
     {
-        public int Value { get; set; }
-        public int Weight { get; set; }
-        public int Taken { get; set; }
+        public int Index { get { return index; } set { index = value; } }
+        public int Value { get { return value; } }
+        public int Weight { get { return weight; } }
+        public int Density { get { return density; } }
+        private int taken;
+
+        public int Taken
+        {
+            get { return taken; }
+            set { taken = value; }
+        }
+
 
         public Item(int value, int weight)
         {
-            this.Value = value;
-            this.Weight = weight;
+            this.value = value;
+            this.weight = weight;
+            this.density = value / weight;
+            this.index = 0;
+            taken = 0;
         }
 
-        public Item()
-        {
+        readonly int value;
+        readonly int weight;
+        readonly int density;
+        public int index;
 
+        public int CompareTo(Item other)
+        {
+            return this.Density.CompareTo(other.Density);
         }
     }
 }

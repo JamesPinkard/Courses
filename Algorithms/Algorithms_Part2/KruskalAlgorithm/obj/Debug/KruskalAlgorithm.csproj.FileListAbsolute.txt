@@ -1,0 +1,6 @@
+C:\Users\jpink_000\Documents\GitHub\Courses\Algorithms\Algorithms_Part2\KruskalAlgorithm\bin\Debug\KruskalAlgorithm.exe.config
+C:\Users\jpink_000\Documents\GitHub\Courses\Algorithms\Algorithms_Part2\KruskalAlgorithm\obj\Debug\KruskalAlgorithm.csprojResolveAssemblyReference.cache
+C:\Users\jpink_000\Documents\GitHub\Courses\Algorithms\Algorithms_Part2\KruskalAlgorithm\bin\Debug\KruskalAlgorithm.exe
+C:\Users\jpink_000\Documents\GitHub\Courses\Algorithms\Algorithms_Part2\KruskalAlgorithm\bin\Debug\KruskalAlgorithm.pdb
+C:\Users\jpink_000\Documents\GitHub\Courses\Algorithms\Algorithms_Part2\KruskalAlgorithm\obj\Debug\KruskalAlgorithm.exe
+C:\Users\jpink_000\Documents\GitHub\Courses\Algorithms\Algorithms_Part2\KruskalAlgorithm\obj\Debug\KruskalAlgorithm.pdb
