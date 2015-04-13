@@ -11,7 +11,9 @@ namespace KruskalAlgorithm
     {
         static void Main(string[] args)
         {
-            List<string> lines = readLinesIn(@"C:\Users\jpink_000\SkyDrive\Courses\Algorithms\Algorithm_Pt2\ProgrammingAssignments\clustering1.txt");
+            // string myLaptopPath = @"C:\Users\jpink_000\SkyDrive\Courses\Algorithms\Algorithm_Pt2\ProgrammingAssignments\clustering1.txt";
+            string myHomePath = @"E:\SkyDrive\Courses\Algorithms\Algorithm_Pt2\ProgrammingAssignments\clustering1.txt";
+            List<string> lines = readLinesIn(myHomePath);
 
             int numNodes = int.Parse(lines[0].Split()[0]);
             Dictionary<int, LinkedListNode<Vertex>> nodeDict = new Dictionary<int,LinkedListNode<Vertex>>();
@@ -35,11 +37,14 @@ namespace KruskalAlgorithm
                 G.AddEdge(nodeX, nodeY, weight);
 			}
 
+            /*
             List<Edge> myMST = KruskalMinSpanTree(G);
 
             List<int> weights = myMST.Select(edge => edge.WeightValue).ToList<int>();
             int cost = weights.Sum();
-            
+            */
+
+            int cost = KruskalMinClustering(G, 4, numNodes);
             Console.WriteLine(cost);
             Console.ReadLine();
         }
@@ -68,6 +73,29 @@ namespace KruskalAlgorithm
             return mst;
         }
 
+        public static int KruskalMinClustering(Graph G,int kClusters, int numVertices)
+        {
+            G.SortEdges();
+            int numUnions = 0;
+            int maxUnions = numVertices - kClusters;
+            List<Edge> mst = new List<Edge>();
+            foreach (var edge in G.listEdges)
+            {
+                if (!G.IsCycle(edge.NodeA, edge.NodeB))
+                {
+                    if (numUnions == maxUnions )
+                    {
+                        return edge.WeightValue;
+                    }
+                    mst.Add(edge);
+                    Union(edge.NodeA, edge.NodeB);
+                    numUnions++;
+                }
+            }
+
+            return 0;
+        }
+
         public static void Union(LinkedListNode<Vertex> x, LinkedListNode<Vertex> y)
         {
             LinkedList<Vertex> listX = x.List;
@@ -87,7 +115,8 @@ namespace KruskalAlgorithm
                 maxList = listX;
             }
 
-            for (int k = 0; k < minList.Count; k++)
+            int minCount = minList.Count;
+            for (int k = 0; k < minCount; k++)
             {
                 LinkedListNode<Vertex> node = minList.First;
                 minList.RemoveFirst();
