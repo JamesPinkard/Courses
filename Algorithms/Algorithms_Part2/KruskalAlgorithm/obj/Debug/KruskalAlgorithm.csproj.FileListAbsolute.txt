@@ -10,3 +10,9 @@ C:\Users\James\Documents\GitHub\Courses\Algorithms\Algorithms_Part2\KruskalAlgor
 C:\Users\James\Documents\GitHub\Courses\Algorithms\Algorithms_Part2\KruskalAlgorithm\bin\Debug\KruskalAlgorithm.exe
 C:\Users\James\Documents\GitHub\Courses\Algorithms\Algorithms_Part2\KruskalAlgorithm\bin\Debug\KruskalAlgorithm.pdb
 C:\Users\James\Documents\GitHub\Courses\Algorithms\Algorithms_Part2\KruskalAlgorithm\obj\Debug\KruskalAlgorithm.csprojResolveAssemblyReference.cache
+C:\Users\jpinkard\Documents\GitHub\Courses\Algorithms\Algorithms_Part2\KruskalAlgorithm\bin\Debug\KruskalAlgorithm.exe.config
+C:\Users\jpinkard\Documents\GitHub\Courses\Algorithms\Algorithms_Part2\KruskalAlgorithm\obj\Debug\KruskalAlgorithm.exe
+C:\Users\jpinkard\Documents\GitHub\Courses\Algorithms\Algorithms_Part2\KruskalAlgorithm\obj\Debug\KruskalAlgorithm.pdb
+C:\Users\jpinkard\Documents\GitHub\Courses\Algorithms\Algorithms_Part2\KruskalAlgorithm\bin\Debug\KruskalAlgorithm.exe
+C:\Users\jpinkard\Documents\GitHub\Courses\Algorithms\Algorithms_Part2\KruskalAlgorithm\bin\Debug\KruskalAlgorithm.pdb
+C:\Users\jpinkard\Documents\GitHub\Courses\Algorithms\Algorithms_Part2\KruskalAlgorithm\obj\Debug\KruskalAlgorithm.csprojResolveAssemblyReference.cache

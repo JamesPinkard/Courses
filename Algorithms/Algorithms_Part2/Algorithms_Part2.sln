@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreedyAlgorithms_and_Minimu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KruskalAlgorithm", "KruskalAlgorithm\KruskalAlgorithm.csproj", "{53D89EDF-F9D1-4C79-BCAC-85CC4234EB2E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnapsackAlgorithm", "KnapsackAlgorithm\KnapsackAlgorithm.csproj", "{6EDB0D48-8936-465C-A05F-B783984C6CEA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{53D89EDF-F9D1-4C79-BCAC-85CC4234EB2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53D89EDF-F9D1-4C79-BCAC-85CC4234EB2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53D89EDF-F9D1-4C79-BCAC-85CC4234EB2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EDB0D48-8936-465C-A05F-B783984C6CEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EDB0D48-8936-465C-A05F-B783984C6CEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EDB0D48-8936-465C-A05F-B783984C6CEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EDB0D48-8936-465C-A05F-B783984C6CEA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

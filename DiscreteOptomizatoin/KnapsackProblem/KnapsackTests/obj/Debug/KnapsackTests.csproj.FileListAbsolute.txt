@@ -16,3 +16,12 @@ C:\Users\jpink_000\Documents\GitHub\Courses\DiscreteOptomizatoin\KnapsackProblem
 C:\Users\jpink_000\Documents\GitHub\Courses\DiscreteOptomizatoin\KnapsackProblem\KnapsackTests\obj\Debug\KnapsackTests.csprojResolveAssemblyReference.cache
 C:\Users\jpink_000\Documents\GitHub\Courses\DiscreteOptomizatoin\KnapsackProblem\KnapsackTests\obj\Debug\KnapsackTests.dll
 C:\Users\jpink_000\Documents\GitHub\Courses\DiscreteOptomizatoin\KnapsackProblem\KnapsackTests\obj\Debug\KnapsackTests.pdb
+C:\Users\jpinkard\Documents\GitHub\Courses\DiscreteOptomizatoin\KnapsackProblem\KnapsackTests\bin\Debug\KnapsackTests.dll
+C:\Users\jpinkard\Documents\GitHub\Courses\DiscreteOptomizatoin\KnapsackProblem\KnapsackTests\bin\Debug\KnapsackTests.pdb
+C:\Users\jpinkard\Documents\GitHub\Courses\DiscreteOptomizatoin\KnapsackProblem\KnapsackTests\bin\Debug\KnapsackProblem.exe
+C:\Users\jpinkard\Documents\GitHub\Courses\DiscreteOptomizatoin\KnapsackProblem\KnapsackTests\bin\Debug\nunit.framework.dll
+C:\Users\jpinkard\Documents\GitHub\Courses\DiscreteOptomizatoin\KnapsackProblem\KnapsackTests\bin\Debug\KnapsackProblem.pdb
+C:\Users\jpinkard\Documents\GitHub\Courses\DiscreteOptomizatoin\KnapsackProblem\KnapsackTests\bin\Debug\nunit.framework.xml
+C:\Users\jpinkard\Documents\GitHub\Courses\DiscreteOptomizatoin\KnapsackProblem\KnapsackTests\obj\Debug\KnapsackTests.csprojResolveAssemblyReference.cache
+C:\Users\jpinkard\Documents\GitHub\Courses\DiscreteOptomizatoin\KnapsackProblem\KnapsackTests\obj\Debug\KnapsackTests.dll
+C:\Users\jpinkard\Documents\GitHub\Courses\DiscreteOptomizatoin\KnapsackProblem\KnapsackTests\obj\Debug\KnapsackTests.pdb

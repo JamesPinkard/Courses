@@ -1,0 +1,6 @@
+C:\Users\jpinkard\Documents\GitHub\Courses\Algorithms\Algorithms_Part2\KnapsackAlgorithm\bin\Debug\KnapsackAlgorithm.exe.config
+C:\Users\jpinkard\Documents\GitHub\Courses\Algorithms\Algorithms_Part2\KnapsackAlgorithm\bin\Debug\KnapsackAlgorithm.exe
+C:\Users\jpinkard\Documents\GitHub\Courses\Algorithms\Algorithms_Part2\KnapsackAlgorithm\bin\Debug\KnapsackAlgorithm.pdb
+C:\Users\jpinkard\Documents\GitHub\Courses\Algorithms\Algorithms_Part2\KnapsackAlgorithm\obj\Debug\KnapsackAlgorithm.csprojResolveAssemblyReference.cache
+C:\Users\jpinkard\Documents\GitHub\Courses\Algorithms\Algorithms_Part2\KnapsackAlgorithm\obj\Debug\KnapsackAlgorithm.exe
+C:\Users\jpinkard\Documents\GitHub\Courses\Algorithms\Algorithms_Part2\KnapsackAlgorithm\obj\Debug\KnapsackAlgorithm.pdb

@@ -10,3 +10,9 @@ C:\Users\jpink_000\Documents\GitHub\Courses\DiscreteOptomizatoin\KnapsackProblem
 C:\Users\jpink_000\Documents\GitHub\Courses\DiscreteOptomizatoin\KnapsackProblem\KnapsackProblem\bin\Debug\KnapsackProblem.exe
 C:\Users\jpink_000\Documents\GitHub\Courses\DiscreteOptomizatoin\KnapsackProblem\KnapsackProblem\bin\Debug\KnapsackProblem.pdb
 C:\Users\jpink_000\Documents\GitHub\Courses\DiscreteOptomizatoin\KnapsackProblem\KnapsackProblem\obj\Debug\KnapsackProblem.csprojResolveAssemblyReference.cache
+C:\Users\jpinkard\Documents\GitHub\Courses\DiscreteOptomizatoin\KnapsackProblem\KnapsackProblem\bin\Debug\KnapsackProblem.exe.config
+C:\Users\jpinkard\Documents\GitHub\Courses\DiscreteOptomizatoin\KnapsackProblem\KnapsackProblem\obj\Debug\KnapsackProblem.exe
+C:\Users\jpinkard\Documents\GitHub\Courses\DiscreteOptomizatoin\KnapsackProblem\KnapsackProblem\obj\Debug\KnapsackProblem.pdb
+C:\Users\jpinkard\Documents\GitHub\Courses\DiscreteOptomizatoin\KnapsackProblem\KnapsackProblem\bin\Debug\KnapsackProblem.exe
+C:\Users\jpinkard\Documents\GitHub\Courses\DiscreteOptomizatoin\KnapsackProblem\KnapsackProblem\bin\Debug\KnapsackProblem.pdb
+C:\Users\jpinkard\Documents\GitHub\Courses\DiscreteOptomizatoin\KnapsackProblem\KnapsackProblem\obj\Debug\KnapsackProblem.csprojResolveAssemblyReference.cache

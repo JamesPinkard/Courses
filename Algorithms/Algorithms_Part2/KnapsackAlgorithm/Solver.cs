@@ -6,20 +6,22 @@ using System.Threading.Tasks;
 using System.Threading;
 using System.IO;
 
-namespace KnapsackProblem
+namespace KnapsackAlgorithm
 {
     public class Solver
     {
         static void Main(string[] args)
         {
-           
-            int maxStackSize = 128 *1024 *1024;
+
+            int maxStackSize = 128 * 1024 * 1024;
             object token = new object();
+            Console.WriteLine("What is the input file path:");
+            string inputPath = Console.ReadLine();
 
             try
             {
                 Thread th = new Thread(Solver.delSolve, maxStackSize);
-                th.Start(args);
+                th.Start(inputPath);
                 th.Join();
             }
             catch (IOException e)
@@ -27,47 +29,39 @@ namespace KnapsackProblem
                 Console.WriteLine(e.StackTrace);
                 Console.WriteLine(e.Message);
             }
+
+            Console.ReadLine();
         }
 
         public static void delSolve(object obj)
         {
-            string[] myArgs = (string[])obj;
+            string myArgs = (string)obj;
             basicSolve(myArgs);
         }
 
         // Read the instance, solve it, and print the solution in the standard output
-        public static void basicSolve(string[] args)
-        {
-            string fileName = null;
-
-            // Get the temp file name
-            fileName = getTempFileName(args, fileName);
-
-            if (fileName == null)
-            {
-                return;
-            }
-
+        public static void basicSolve(string fileName)
+        { 
             // read the lines out of the file
             List<string> lines = readLinesIn(fileName);
 
             // parse the data in the file
             string[] firstLine = lines.First().TrimEnd().Split();
-            int items = int.Parse(firstLine[0]);
-            int capacity = int.Parse(firstLine[1]);
+            int items = int.Parse(firstLine[1]);
+            int capacity = int.Parse(firstLine[0]);
 
-            int[] Values = new int[items+1];
-            int[] Weights = new int[items+1];
+            int[] Values = new int[items + 1];
+            int[] Weights = new int[items + 1];
             Knapsack myKnapsack = new Knapsack(capacity);
 
             for (int i = 1; i < items + 1; i++)
             {
                 string line = lines[i];
                 string[] parts = line.TrimEnd().Split();
-                
+
 
                 Values[i] = int.Parse(parts[0]);
-                Weights[i] = int.Parse(parts[1]);                
+                Weights[i] = int.Parse(parts[1]);
             }
 
             Values[0] = 0;
@@ -78,7 +72,7 @@ namespace KnapsackProblem
             // it takes itmes in order until the knapsack is full 
             int[,] optTable = new int[capacity + 1, items + 1];
 
-            for (int j = 0; j < items; j++ )
+            for (int j = 0; j < items; j++)
             {
                 optTable[0, j] = 0;
             }
@@ -94,7 +88,7 @@ namespace KnapsackProblem
                 {
                     if (Weights[j] > w)
                     {
-                        optTable[w,j] = optTable[w, j - 1];  
+                        optTable[w, j] = optTable[w, j - 1];
                     }
                     else
                     {
@@ -107,19 +101,19 @@ namespace KnapsackProblem
 
             int optimumValue = optTable[capacity, items];
 
-            int row = capacity;            
+            int row = capacity;
             int[] taken = new int[items];
 
-            for (int col = items ; col > 0; col--)
+            for (int col = items; col > 0; col--)
             {
                 if (optTable[row, col] == optTable[row, col - 1])
                 {
-                    taken[col - 1] = 0;                    
+                    taken[col - 1] = 0;
                 }
                 else // entry is used in optimal solution
                 {
                     taken[col - 1] = 1;
-                    row -= Weights[col];   
+                    row -= Weights[col];
                 }
             }
 
@@ -177,11 +171,11 @@ namespace KnapsackProblem
             // it takes itmes in order until the knapsack is full 
             int[] taken = new int[items];
 
-            foreach(var item in myItems)
+            foreach (var item in myItems)
             {
                 if (myKnapsack.Weight + item.Weight <= capacity)
                 {
-                    myKnapsack.Add(item);  
+                    myKnapsack.Add(item);
                 }
             }
 
@@ -234,7 +228,7 @@ namespace KnapsackProblem
             // prpare the solution in the specified output format
             PrintOutput(myItems, optKnapsack);
         }
-        
+
         private static List<string> readLinesIn(string fileName)
         {
             List<string> lines = new List<string>();
@@ -263,7 +257,7 @@ namespace KnapsackProblem
             }
             return fileName;
         }
-        
+
         private static void PrintOutput(Item[] myItems, Knapsack myKnapsack)
         {
             Console.WriteLine("{0} 0", myKnapsack.Value);
@@ -294,8 +288,8 @@ namespace KnapsackProblem
         public static Knapsack GetOptimumKnapsack(Knapsack knapsack, Item[] itemArray)
         {
             Knapsack myKnapsack = knapsack.Copy();
-            int kValue = myKnapsack.Value;            
-            
+            int kValue = myKnapsack.Value;
+
             if (myKnapsack.Weight > myKnapsack.Capacity)
             {
                 myKnapsack.RemoveLastItem();
@@ -311,7 +305,7 @@ namespace KnapsackProblem
                 }
                 else
                 {
-                    return myKnapsack;   
+                    return myKnapsack;
                 }
             }
 
@@ -322,7 +316,7 @@ namespace KnapsackProblem
                 Item[] restOfItems = itemArray.Skip(1).ToArray();
                 Knapsack kAdded = GetOptimumKnapsack(myKnapsack, restOfItems);
 
-                
+
                 Knapsack kOriginal = GetOptimumKnapsack(knapsack, restOfItems);
 
                 return Knapsack.GetMaxKnapsack(kAdded, kOriginal);
