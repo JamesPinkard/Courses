@@ -11,7 +11,7 @@ namespace HeapsAndHashes
     {
         static void Main(string[] args)
         {
-            string[] fileNumbers = File.ReadAllLines(@"C:\Users\jpink_000\Documents\GitHub\Courses\Algorithms\Median.txt");
+            string[] fileNumbers = File.ReadAllLines(@"E:\SkyDrive\Courses\Algorithms\algorithm_pt1\Median.txt");
             
             List<int> myNums = new List<int>();
             List<int> medians = new List<int>();

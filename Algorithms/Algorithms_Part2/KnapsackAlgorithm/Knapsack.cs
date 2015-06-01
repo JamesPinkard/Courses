@@ -10,15 +10,16 @@ namespace KnapsackAlgorithm
     {
         private List<Item> items = new List<Item>();
         public int Capacity { get; set; }
+        public int Weight { get { return weight; } private set { weight = value; } }
+        public int Value { get; private set; }
+        public int FoundMax { get; set; }
 
         public Knapsack(int capacity)
         {
             this.Capacity = capacity;
         }
 
-        public int Weight { get; private set; }
-        public int Value { get; private set; }
-        public int FoundMax { get; set; }
+        private int weight;
 
         public List<Item> GetItemListCopy()
         {

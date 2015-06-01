@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Item.cs" />
     <Compile Include="Knapsack.cs" />
+    <Compile Include="Solver - Copy.cs" />
     <Compile Include="Solver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

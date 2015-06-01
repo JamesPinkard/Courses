@@ -8,19 +8,19 @@ using System.IO;
 
 namespace KnapsackAlgorithm
 {
-    public class Solver
+    public class Solver_Big
     {
-        static void Main(string[] args)
+        static void Main_v2(string[] args)
         {
 
             int maxStackSize = 128 * 1024 * 1024;
             object token = new object();
             Console.WriteLine("What is the input file path:");
-            string inputPath = @"E:\SkyDrive\Courses\Algorithms\Algorithm_Pt2\ProgrammingAssignments\knapsack1.txt";
+            string inputPath = @"E:\SkyDrive\Courses\Algorithms\Algorithm_Pt2\ProgrammingAssignments\knapsack_big.txt";
 
             try
             {
-                Thread th = new Thread(Solver.delSolve, maxStackSize);
+                Thread th = new Thread(Solver_Big.delSolve, maxStackSize);
                 th.Start(inputPath);
                 th.Join();
             }
@@ -36,7 +36,7 @@ namespace KnapsackAlgorithm
         public static void delSolve(object obj)
         {
             string myArgs = (string)obj;
-            basicSolve(myArgs);
+            solve(myArgs);
         }
 
         // Read the instance, solve it, and print the solution in the standard output
@@ -81,7 +81,7 @@ namespace KnapsackAlgorithm
             {
                 optTable[w, 0] = 0;
             }
-
+             
             for (int j = 1; j <= items; j++)
             {
                 for (int w = 1; w <= capacity; w++)
@@ -184,17 +184,8 @@ namespace KnapsackAlgorithm
         }
 
         // original solve algorithm
-        private static void solve(string[] args)
-        {
-            string fileName = null;
-
-            // Get the temp file name
-            fileName = getTempFileName(args, fileName);
-
-            if (fileName == null)
-            {
-                return;
-            }
+        private static void solve(string fileName)
+        {           
 
             // read the lines out of the file
             List<string> lines = readLinesIn(fileName);
@@ -221,9 +212,9 @@ namespace KnapsackAlgorithm
             }
 
             Array.Sort(myItems);
-            Array.Reverse(myItems);
+            Array.Reverse(myItems);            
 
-            Knapsack optKnapsack = GetOptimumKnapsack(myKnapsack, myItems);
+            Knapsack optKnapsack = GetOptimumKnapsack(myKnapsack, myItems, 0, 0);
 
             // prpare the solution in the specified output format
             PrintOutput(myItems, optKnapsack);
@@ -285,20 +276,19 @@ namespace KnapsackAlgorithm
             Console.WriteLine();
         }
 
-        public static Knapsack GetOptimumKnapsack(Knapsack knapsack, Item[] itemArray)
-        {
-            Knapsack myKnapsack = knapsack.Copy();
+        public static Knapsack GetOptimumKnapsack(Knapsack myKnapsack, Item[] itemArray, int i, int weight)
+        {            
             int kValue = myKnapsack.Value;
 
-            if (myKnapsack.Weight > myKnapsack.Capacity)
-            {
-                myKnapsack.RemoveLastItem();
-                return myKnapsack;
-            }
+            int arrayLength = itemArray.Length;
+            int leftover = arrayLength - i;            
+            int foundMax = myKnapsack.FoundMax;
+            int origKnapsackWeight = weight;
+            int capacity = myKnapsack.Capacity;
 
-            if (itemArray.Length < 1)
+            if (leftover < 1)
             {
-                if (kValue > myKnapsack.FoundMax)
+                if (kValue > foundMax)
                 {
                     myKnapsack.FoundMax = kValue;
                     return myKnapsack;
@@ -309,15 +299,17 @@ namespace KnapsackAlgorithm
                 }
             }
 
-            int availableMax = myKnapsack.GetAvailableMax(itemArray);
-            if (availableMax > myKnapsack.FoundMax)
+            int itemWeight = itemArray[i].Weight;
+            int addedKnapsackWeight = origKnapsackWeight + itemWeight;
+
+            if (addedKnapsackWeight <= capacity)
             {
-                myKnapsack.Add(itemArray[0]);
-                Item[] restOfItems = itemArray.Skip(1).ToArray();
-                Knapsack kAdded = GetOptimumKnapsack(myKnapsack, restOfItems);
 
+                Knapsack kOriginal = GetOptimumKnapsack(myKnapsack, itemArray, i + 1, origKnapsackWeight);
 
-                Knapsack kOriginal = GetOptimumKnapsack(knapsack, restOfItems);
+                Knapsack addedKnapsack = myKnapsack.Copy();
+                addedKnapsack.Add(itemArray[i]);
+                Knapsack kAdded = GetOptimumKnapsack(addedKnapsack, itemArray, i + 1, addedKnapsackWeight);
 
                 return Knapsack.GetMaxKnapsack(kAdded, kOriginal);
             }

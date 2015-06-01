@@ -7,3 +7,6 @@ C:\Users\jpink_000\Documents\GitHub\Courses\Algorithms\Algorithms\HeapsAndHashes
 C:\Users\James\Documents\GitHub\Courses\Algorithms\Algorithms\HeapsAndHashes\bin\Debug\HeapsAndHashes.exe.config
 C:\Users\James\Documents\GitHub\Courses\Algorithms\Algorithms\HeapsAndHashes\obj\Debug\HeapsAndHashes.exe
 C:\Users\James\Documents\GitHub\Courses\Algorithms\Algorithms\HeapsAndHashes\obj\Debug\HeapsAndHashes.pdb
+C:\Users\James\Documents\GitHub\Courses\Algorithms\Algorithms\HeapsAndHashes\bin\Debug\HeapsAndHashes.exe
+C:\Users\James\Documents\GitHub\Courses\Algorithms\Algorithms\HeapsAndHashes\bin\Debug\HeapsAndHashes.pdb
+C:\Users\James\Documents\GitHub\Courses\Algorithms\Algorithms\HeapsAndHashes\obj\Debug\HeapsAndHashes.csprojResolveAssemblyReference.cache
