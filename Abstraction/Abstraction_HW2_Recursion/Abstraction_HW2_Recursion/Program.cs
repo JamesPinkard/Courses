@@ -48,6 +48,8 @@ namespace Abstraction_HW2_Recursion
         }
         
         // Practice 2
+        // Check through every possible subset in a list of numbers
+        // Return true if the sum of a subset equals the target sum
         static bool CanMakeSum(List<int> nums, int targetSum)
         {
             List<int> soFar = new List<int>();
